@@ -4,12 +4,15 @@ let category_nav_list = document.querySelector(
 function open_Category_list() {
   category_nav_list.classList.toggle("active");
 }
-
+let nav_links = document.querySelector(".nav_links");
+function open_menu() {
+  nav_links.classList.toggle("active");
+}
 var cart = document.querySelector(".cart");
 function open_close_cart() {
   cart.classList.toggle("active");
 }
-fetch("products.json")
+fetch("https://fakestoreapi.com/products/")
   .then((response) => response.json())
   .then((data) => {
     const addToCartButton = document.querySelectorAll(".btn_add_to_cart");

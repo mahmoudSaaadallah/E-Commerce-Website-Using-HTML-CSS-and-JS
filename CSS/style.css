@@ -803,7 +803,13 @@ footer .bottom_footer .payment_img {
     width: 90%;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1110px) {
+  .slide .container .slide-swp img {
+    width: 100%;
+  }
+  body {
+    padding-top: 260px;
+  }
   header .top_header .container {
     flex-wrap: wrap;
   }
@@ -881,7 +887,39 @@ footer .bottom_footer .payment_img {
     gap: 20px;
   }
 }
+@media (max-width: 1100px) {
+  .banners_4 .container .box {
+    width: 48%;
+    margin-bottom: 20px;
+    justify-content: space-around;
+  }
+  .banners_4 .container {
+    flex-wrap: wrap;
+  }
+  .swiper-android .swiper-slide,
+  .swiper-ios .swiper-slide,
+  .swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 2px;
+    justify-content: flex-start;
+  }
+  .product {
+    width: 33%;
+    height: auto;
+  }
+  .slide .container .mySwiper .btn_Swip {
+    display: none;
+  }
+  footer .container .row .links a {
+    font-size: 12px;
+  }
+}
 @media (max-width: 800px) {
+  body {
+    padding-top: 280px;
+  }
   header .top_header .search_form .select_box select {
     width: 400px;
   }
@@ -895,9 +933,57 @@ footer .bottom_footer .payment_img {
   header .top_header .search_form button {
     transform: translate(10px, -57px);
   }
+  header .buttom_header .category_nav {
+    font-size: 18px;
+    width: 200px;
+    display: none;
+  }
+  .swiper-android .swiper-slide,
+  .swiper-ios .swiper-slide,
+  .swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 4px;
+    justify-content: center;
+    justify-content: flex-start;
+  }
+  .product {
+    width: 49%;
+    height: auto;
+  }
+
+  .slide .container .mySwiper .btn_Swip {
+    display: none;
+  }
+  footer .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer .container .row .links a {
+    font-size: 16px;
+  }
+  footer .container .big_row {
+    width: 40%;
+    margin-bottom: 40px;
+  }
+
+  footer .container .row {
+    width: 40%;
+  }
 }
 
 @media (max-width: 650px) {
+  body {
+    padding-top: 300px;
+  }
+  .banners_4 .container .box {
+    width: 100%;
+  }
+  .banners_4 .container {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
   header .top_header .search_form .select_box select {
     width: 400px;
   }
@@ -911,4 +997,195 @@ footer .bottom_footer .payment_img {
   header .top_header .search_form button {
     transform: translate(10px, -57px);
   }
+}
+@media (max-width: 550px) {
+  header .buttom_header .category_nav {
+    display: none;
+  }
+  .product .icons .btn_add_to_cart {
+    width: 70%;
+    font-size: 30px;
+    height: auto;
+    padding: 12px;
+  }
+  .swiper-android .swiper-slide,
+  .swiper-ios .swiper-slide,
+  .swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 4px;
+    justify-content: center;
+    justify-content: flex-start;
+  }
+  .product .icons .icon_product {
+    width: 15%;
+    height: auto;
+  }
+  .product .icons .icon_product i {
+    font-size: 30px;
+  }
+  .product .icons .icon_product:hover i {
+    font-size: 32px;
+  }
+  .product {
+    width: 99%;
+    height: auto;
+    font-size: 24px;
+  }
+  header .top_header .search_form input {
+    width: calc(100% - 120px);
+    transform: translate(100px, -57.5px);
+  }
+  header .top_header .search_form button {
+    transform: translate(10px, -57px);
+    width: 40px;
+  }
+  header .top_header .search_form .select_box select {
+    width: 140px;
+  }
+  header .top_header .search_form .select_box select {
+    transform: translateX(-120px);
+  }
+  header .buttom_header .nav_links {
+    width: 100%;
+    left: -100%;
+  }
+  .cart {
+    width: 100%;
+    right: -100%;
+  }
+  footer .container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer .container .row .links a {
+    font-size: 28px;
+  }
+  footer .container .big_row {
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+    justify-content: center;
+
+    margin-bottom: 40px;
+  }
+  footer .container .big_row .icons_footer {
+    justify-content: center;
+  }
+  footer .container .big_row p {
+    font-size: 28px;
+  }
+
+  footer .container .row {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+  .price p {
+    font-size: 38px;
+  }
+  .price .old_price {
+    font-size: 20px;
+  }
+}
+@media (max-width: 450px) {
+  header .buttom_header .category_nav {
+    display: none;
+  }
+
+  header .top_header .search_form input {
+    width: calc(100% - 123px);
+    transform: translate(50px, -57.5px);
+  }
+  header .top_header .search_form button {
+    transform: translate(10px, -57px);
+    width: 30px;
+  }
+  header .top_header .search_form .select_box select {
+    width: 110px;
+    font-size: 12px;
+  }
+  header .top_header .search_form .select_box select {
+    transform: translateX(-140px);
+  }
+}
+
+/*  */
+/* 
+
+
+
+
+*/
+/* 
+
+
+*/
+/* Check Out Page */
+.checkout {
+  margin: 50px 0;
+}
+
+.checkout .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.checkout .container .ordersummary {
+  width: 45%;
+  padding: 0 40px;
+  border: 1px solid var(--border_color);
+  border-radius: 5px;
+  box-shadow: 0px 8px 10px #70737a74;
+}
+.checkout .container .ordersummary h1 {
+  border-bottom: 1px solid var(--border_color);
+  padding: 20px 0;
+  margin-bottom: 20px;
+  color: var(--main_color);
+}
+.checkout .container .ordersummary .items {
+  height: 350px;
+  overflow-y: auto;
+}
+.checkout .container .ordersummary .item_cart {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  height: 125px;
+  border-bottom: 1px solid var(--border_color);
+  padding-right: 20px;
+}
+.checkout .container .ordersummary .item_cart .image_name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.checkout .container .ordersummary .item_cart img {
+  width: 80px;
+}
+.checkout .container .ordersummary .item_cart h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.checkout .container .ordersummary .delete_item i {
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.checkout .container .ordersummary .delete_item:hover i {
+  font-size: 22px;
+  color: red;
+}
+.checkout .container .ordersummary .quantity_control {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
 }

@@ -2,6 +2,7 @@ fetch("products.json")
   .then((response) => response.json())
   .then((data) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const fav = JSON.parse(localStorage.getItem("fav")) || [];
     const swiper_items_sale = document.getElementById("swiper_items_sale");
     const swiper_electronics = document.getElementById("swiper_electronics");
     const swiper_appliances = document.getElementById("swiper_appliances");
@@ -10,6 +11,7 @@ fetch("products.json")
     data.forEach((product) => {
       if (product.old_price) {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
         swiper_items_sale.innerHTML += `
         <div class="swiper-slide product">
               <span class="sale_precent">${parseInt(
@@ -42,8 +44,10 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
-                  <i class="fa-regular fa-heart"></i>
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
                 </span>
               </div>
             </div>
@@ -91,6 +95,7 @@ fetch("products.json")
       old_price = product.old_price;
       if (old_price === undefined) {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
 
         if (product.catetory === "electronics") {
           swiper_electronics.innerHTML += `
@@ -121,8 +126,10 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
-                  <i class="fa-regular fa-heart"></i>
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
                 </span>
               </div>
             </div>
@@ -131,6 +138,7 @@ fetch("products.json")
         }
       } else if (product.catetory === "electronics") {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
 
         swiper_electronics.innerHTML += `
         <div class="swiper-slide product">
@@ -162,8 +170,10 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
-                  <i class="fa-regular fa-heart"></i>
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
                 </span>
               </div>
             </div>
@@ -178,6 +188,7 @@ fetch("products.json")
       old_price = product.old_price;
       if (old_price === undefined) {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
 
         if (product.catetory === "appliances") {
           swiper_appliances.innerHTML += `
@@ -208,7 +219,9 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
                   <i class="fa-regular fa-heart"></i>
                 </span>
               </div>
@@ -218,6 +231,7 @@ fetch("products.json")
         }
       } else if (product.catetory === "appliances") {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
 
         swiper_appliances.innerHTML += `
         <div class="swiper-slide product">
@@ -249,7 +263,9 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
                   <i class="fa-regular fa-heart"></i>
                 </span>
               </div>
@@ -265,6 +281,7 @@ fetch("products.json")
       old_price = product.old_price;
       if (old_price === undefined) {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
 
         if (product.catetory === "mobiles") {
           swiper_mobile.innerHTML += `
@@ -295,7 +312,9 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
                   <i class="fa-regular fa-heart"></i>
                 </span>
               </div>
@@ -305,6 +324,7 @@ fetch("products.json")
         }
       } else if (product.catetory === "mobiles") {
         const isINCart = cart.some((item) => item.id === product.id);
+        const isINFav = fav.some((item) => item.id === product.id);
 
         swiper_mobile.innerHTML += `
         <div class="swiper-slide product">
@@ -336,7 +356,9 @@ fetch("products.json")
                     isINCart ? "Item in cart" : "Add to cart"
                   }
                 </span>
-                <span class="icon_product">
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
                   <i class="fa-regular fa-heart"></i>
                 </span>
               </div>

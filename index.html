@@ -54,8 +54,7 @@
             </div>
           </form>
           <div class="header_icons">
-            <div class="icon">
-              <a href="#">
+            <div onclick="open_close_fav()" class="icon">
                 <i class="fa-regular fa-heart"></i>
                 <span class="count count_favorite">0</span>
               </a>
@@ -95,7 +94,7 @@
               ></span>
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Accesories</a></li>
+              <li><a href="products.html">Products</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
@@ -127,15 +126,34 @@
           <p class="price_cart_total">$0</p>
         </div>
         <div class="button_cart">
-          <a href="#" class="btn_cart btn">Checkout</a>
+          <a href="checkout.html" class="btn_cart btn">Checkout</a>
           <span onclick="open_close_cart()" class="btn_cart trans_bg btn"
             >Shop More</span
           >
         </div>
       </div>
-    </div>
+    </div>  
 
     <!-- End Of Cart -->
+
+    <!-- Fav -->
+    <div class="fav">
+      <div class="top_fav">
+        <h3>Favorite Items</h3>
+        <span onclick="open_close_fav()" class="close_fav"
+          ><i class="fa-solid fa-circle-xmark"></i
+        ></span>
+      </div>
+      <div class="items_in_fav" id="fav_items"></div>
+      <div class="bottom_fav">
+        <div class="button_fav">
+          <span onclick="open_close_fav()" class="btn_fav trans_bg btn"
+            >Shop More</span
+          >
+        </div>
+      </div>
+    </div>
+    <!-- End of Fav -->
 
     <!--  -->
     <div class="slide">
@@ -417,6 +435,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="Js/swipper.js"></script>
     <script src="Js/items_home.js"></script>
-    <script src="Js/main.js"></script>
+    <script src="JS/main.js"></script>
   </body>
 </html>

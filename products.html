@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+        <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roka | Online Store</title>
 
     <link rel="icon" href="img/icon2.png " />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-
     <!-- File CSS -->
     <link rel="stylesheet" href="CSS/style.css" />
-  </head>
-  <body>
-    <header>
+</head>
+<body>
+        <header>
       <div class="top_header">
         <div class="container">
           <a href="index.html" class="logo"
             ><img src="img/Gemini_Generated_Image_f27voqf27voqf27v.png" alt=""
           /></a>
-         
+          <form action="" class="search_form">
+            <div class="select_box">
+              <select id="category" name="category">
+                <option value="All Categories">All Categories</option>
+                <option value="Electronics & Digital">
+                  Electronics & Digital
+                </option>
+                <option value="Phone & Tablet">Phone & Tablet</option>
+                <option value="Fashion & Clothing">Fashion & Clothing</option>
+                <option value="Television & Mointor">
+                  Television & Mointor
+                </option>
+                <option value="Jewellery & Watches">Jewellery & Watches</option>
+                <option value="Washing Machine">Washing Machine</option>
+                <option value="Toys & Kids">Toys & Kids</option>
+              </select>
+              <input
+                type="text"
+                id="search"
+                placeholder="Search for products"
+                name="search"
+                required
+              />
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
           <div class="header_icons">
             <div onclick="open_close_fav()" class="icon">
                 <i class="fa-regular fa-heart"></i>
@@ -49,9 +80,9 @@
                 <i class="fa-solid fa-angle-down"></i>
               </div>
               <div class="category_nav_list">
-                <a href="index.html">Top 10 Offers</a>
-                <a href="index.html">Electronics & Digital</a>
-                <a href="index.html">Phone & Tablet</a>
+                <a href="#">Top 10 Offers</a>
+                <a href="#">Electronics & Digital</a>
+                <a href="#">Phone & Tablet</a>
                 <a href="#">Fashion & Clothing</a>
                 <a href="#">Television & Mointor</a>
                 <a href="#">Jewellery & Watches</a>
@@ -62,9 +93,9 @@
               <span onclick="open_menu()" class="close_menu"
                 ><i class="fa-regular fa-circle-xmark"></i
               ></span>
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Products</a></li>
+              <li><a href="#">Accesories</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
@@ -96,7 +127,7 @@
           <p class="price_cart_total">$0</p>
         </div>
         <div class="button_cart">
-          <a href="#" class="btn_cart btn">Checkout</a>
+          <a href="checkout.html" class="btn_cart btn">Checkout</a>
           <span onclick="open_close_cart()" class="btn_cart trans_bg btn"
             >Shop More</span
           >
@@ -123,80 +154,65 @@
       </div>
     </div>
     <!-- End of Fav -->
-    <!-- Check out -->
-    <section class="checkout">
-      <form action="">
-        <div class="container">
-          <div class="ordersummary">
-            <h1>Order Summary</h1>
-
-            <div class="items" id="Checkoutitems"></div>
-
-            <div class="bottom_summary">
-              <div class="shop_table">
-                <p>Subtotal :</p>
-                <span class="subtotal_checkout">$325.00</span>
-              </div>
-
-              <div class="shop_table">
-                <p>Shipping :</p>
-                <span class="">$20.00</span>
-              </div>
-
-              <div class="shop_table">
-                <p>total :</p>
-                <span class="total_checkout">$325.00</span>
-              </div>
-
-              <div class="button_div">
-                <button onclick="checked()" type="submit">Place order</button>
-              </div>
-            </div>
+<div class="slider_products slide">
+      <div class="container">
+        <div class="slide_product mySwiper">
+          <div class="top_slide">
+            <h2><i class="fa-solid fa-tags"></i>Hot Deals</h2>
           </div>
-
-          <div class="input_info">
-            <div class="address" id="Address_check">
-              <h2>Delivary Address</h2>
-              <div class="inputs">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  required
-                  id="email_check"
-                />
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  required
-                  id="name_check"
-                />
-                <label for="address">Address</label>
-                <input
-                  type="text"
-                  placeholder="Enter your address"
-                  required
-                  id="address_check"
-                />
-                <label for="phone">Phone</label>
-                <input
-                  type="tel"
-                  placeholder="Enter your phone"
-                  required
-                  id="phone_check"
-                />
-              </div>
-            </div>
-          </div>
+          <div class="products swiper-wrapper" id="swiper_items_sale"></div>
+          <div class="swiper-button-next btn_Swip"></div>
+          <div class="swiper-button-prev btn_Swip"></div>
+          <div class="swiper-pagination"></div>
         </div>
-      </form>
-    </section>
-    <!-- End of Checkout -->
+      </div>
+    </div>
+ <!-- Electronics Section -->
+    <div class="slider_products slide" id="electronics">
+      <div class="container">
+        <div class="slide_product mySwiper">
+          <div class="top_slide">
+            <h2><i class="fa-solid fa-tags"></i>Electronics</h2>
+          </div>
+          <div class="products swiper-wrapper" id="swiper_electronics"></div>
+          <div class="swiper-button-next btn_Swip"></div>
+          <div class="swiper-button-prev btn_Swip"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Delivary data -->
+    <!-- Appliances Section -->
+    <div class="slider_products slide" id="appliances">
+      <div class="container">
+        <div class="slide_product mySwiper">
+          <div class="top_slide">
+            <h2><i class="fa-solid fa-tags"></i>Appliances</h2>
+          </div>
+          <div class="products swiper-wrapper" id="swiper_appliances"></div>
+          <div class="swiper-button-next btn_Swip"></div>
+          <div class="swiper-button-prev btn_Swip"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="slider_products slide" id="mobile">
+      <div class="container">
+        <div class="slide_product mySwiper">
+          <div class="top_slide">
+            <h2><i class="fa-solid fa-tags"></i>Mobile</h2>
+          </div>
+          <div class="products swiper-wrapper" id="swiper_mobile"></div>
+          <div class="swiper-button-next btn_Swip"></div>
+          <div class="swiper-button-prev btn_Swip"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
 
-    <footer>
+
+ <footer>
       <div class="container">
         <div class="big_row">
           <img
@@ -308,7 +324,10 @@
         </div>
       </div>
     </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="Js/swipper.js"></script>
+  <script src="Js/items_home.js"></script>
+  <script src="JS/main.js"></script>
 
-    <script src="JS/main.js"></script>
-  </body>
+</body>
 </html>

@@ -9,6 +9,9 @@
   font-family: "Inter", sans-serif;
   color: var(--color_heading);
 }
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --main_color: #4f8cff;
   --p_color: #5a6273;
@@ -1475,6 +1478,7 @@ footer .bottom_footer .payment_img {
 }
 .checkout .input_info {
   width: 45%;
+  box-shadow: 0px 8px 10px #70737a74;
 }
 .checkout .input_info h2 {
   padding: 10px 20px;

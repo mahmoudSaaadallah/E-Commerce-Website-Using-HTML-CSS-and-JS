@@ -369,3 +369,19 @@ function checked() {
     updateCart();
   }
 }
+const bodyHtml = document.querySelector(".slider_products");
+const searchInput = document.getElementById("search");
+function search(productname) {
+  const filter = searchInput.value;
+  bodyHtml.innerHTML = "";
+}
+
+document.getElementById("category").addEventListener("change", function () {
+  const targetId = this.value;
+  if (targetId.startsWith("#")) {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});

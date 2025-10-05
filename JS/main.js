@@ -385,3 +385,84 @@ document.getElementById("category").addEventListener("change", function () {
     }
   }
 });
+document.getElementById("searchlink").addEventListener("change", function () {
+  const targetId = "deals";
+  if (targetId.startsWith("#")) {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});
+/// Search
+const deals = document.getElementById("deals");
+function searchProduct() {
+  const filtered = [];
+  fetch("../products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      data.forEach((product) => {
+        if (
+          product.name.toLowerCase().includes(searchInput.value.toLowerCase())
+        ) {
+          filtered.push(product);
+        }
+      });
+      swiper_items_sale.innerHTML = "";
+      filtered.forEach((product) => {
+        if (product) {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const fav = JSON.parse(localStorage.getItem("fav")) || [];
+          const isINCart = cart.some((item) => item.id === product.id);
+          const isINFav = fav.some((item) => item.id === product.id);
+
+          swiper_items_sale.innerHTML += `
+        <div class="swiper-slide product">
+              <span class="sale_precent">${parseInt(
+                ((product.old_price - product.price) / product.old_price) * 100
+              )}%</span>
+              <div class="img_product">
+                <a href="#"><img src="${product.img}" alt="" /></a>
+              </div>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="name_product">
+                <a href="#"
+                  >${product.name}</a
+                >
+              </p>
+              <div class="price">
+                <p><span>$${product.price}</span></p>
+                <p class="old_price">$${product.old_price}</p>
+              </div>
+              <div class="icons">
+                <span class="btn_add_to_cart ${
+                  isINCart ? "active" : ""
+                }" data-id="${product.id}">
+                  <i class="fa-solid fa-cart-shopping"></i>${
+                    isINCart ? "Item in cart" : "Add to cart"
+                  }
+                </span>
+                <span class="icon_product btn_fav ${
+                  isINFav ? "active" : ""
+                }" data-id="${product.id}">
+                  <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+        `;
+        }
+      });
+    });
+}
+
+const searchbutton = document.getElementById("searchbutton");
+searchbutton.addEventListener("click", (e) => {
+  e.preventDefault();
+  searchProduct();
+});
